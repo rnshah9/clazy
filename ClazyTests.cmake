@@ -18,6 +18,7 @@ add_test(NAME qt6-fwd-fixes COMMAND python3 run_tests.py qt6-fwd-fixes WORKING_D
 add_test(NAME qt6-header-fixes COMMAND python3 run_tests.py qt6-header-fixes WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/tests/)
 add_test(NAME qt6-qhash-signature COMMAND python3 run_tests.py qt6-qhash-signature WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/tests/)
 add_test(NAME qt6-qlatin1stringchar-to-u COMMAND python3 run_tests.py qt6-qlatin1stringchar-to-u WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/tests/)
+add_test(NAME qt6-strict-iterators COMMAND python3 run_tests.py qt6-strict-iterators WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/tests/)
 add_test(NAME qvariant-template-instantiation COMMAND python3 run_tests.py qvariant-template-instantiation WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/tests/)
 add_test(NAME raw-environment-function COMMAND python3 run_tests.py raw-environment-function WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/tests/)
 add_test(NAME reserve-candidates COMMAND python3 run_tests.py reserve-candidates WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/tests/)

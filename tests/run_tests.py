@@ -112,6 +112,13 @@ class Test:
             self.qt_major_version = 4
             if self.minimum_qt_version >= 500:
                 self.minimum_qt_version = 400
+        elif major_version == 6:
+            self.qt_major_version = 6
+            self.cppStandard = "c++17"
+            if self.minimum_qt_version < 60000:
+                self.minimum_qt_version = 60000
+            if self.maximum_qt_version < 60000:
+                self.maximum_qt_version = 69999
 
     def envString(self):
         result = ""
@@ -463,6 +470,8 @@ _only_standalone = args.only_standalone
 _num_threads = multiprocessing.cpu_count()
 _lock = threading.Lock()
 _was_successful = True
+_qt6_installation = find_qt_installation(
+    6, ["QT_SELECT=6 qmake", "qmake-qt6", "qmake"])
 _qt5_installation = find_qt_installation(
     5, ["QT_SELECT=5 qmake", "qmake-qt5", "qmake"])
 _qt4_installation = find_qt_installation(
@@ -497,7 +506,9 @@ CLANG_VERSION = int(version.replace('.', ''))
 
 
 def qt_installation(major_version):
-    if major_version == 5:
+    if major_version == 6:
+        return _qt6_installation
+    elif major_version == 5:
         return _qt5_installation
     elif major_version == 4:
         return _qt4_installation
