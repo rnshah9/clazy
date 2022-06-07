@@ -1,0 +1,10 @@
+FROM --platform=linux/amd64 ubuntu:22.04
+
+RUN apt-get update
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y g++ cmake clang llvm-dev git-core libclang-dev
+
+COPY . /repo
+WORKDIR /repo/build
+RUN cmake ..
+RUN make -j8
+RUN make install
