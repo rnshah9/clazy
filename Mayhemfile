@@ -2,7 +2,6 @@ project: clazy
 target: clazy-standalone
 
 cmds:
-  - cmd: /repo/build/bin/clazy-standalone /test.c
+  - cmd: /install/bin/clazy-standalone @@
     env:
       DISABLE_SMOKETEST: '1'
-    filepath: /test.c
