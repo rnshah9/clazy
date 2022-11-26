@@ -1,0 +1,5 @@
+project: clazy
+target: unquotestring
+
+cmds:
+  - cmd: /fuzz_unquoteString
